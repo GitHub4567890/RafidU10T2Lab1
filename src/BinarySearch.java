@@ -17,12 +17,14 @@ public class BinarySearch {
                    if the value at the midPosition of intArray is LESS than target,
                    make a recursive call to search RIGHT half of remaining array by setting lowPosition
                    to one index right of midPosition but keeping highPosition unchanged */
+                return recursiveBinarySearch(intArray, midPosition + 1, highPosition, target);
             } else if (intArray[midPosition] > target) {
                 /* ------ COMPLETE ME! ------ */
                 /* one missing line of code, should return the value from a recursive call:
                    if the value at the midPosition of intArray is MORE than target,
                    make a recursive call to search LEFT half of remaining array by keeping lowPosition
                    unchanged but setting highPosition to one index left of midPosition */
+                return recursiveBinarySearch(intArray, lowPosition, midPosition - 1, target);
             } else {
                 // otherwise, we FOUND the target, so return that index
                 return midPosition;
@@ -64,4 +66,19 @@ public class BinarySearch {
         // value not found, so -1
         return -1;
     }
+
+    public static int bSearch(int[] arr, int left, int right, int target) {
+        if (right >= left) {
+            int mid = (left + right) / 2;
+            if (arr[mid] == target) {
+                return mid;
+            } else if (arr[mid] > target) {
+                return bSearch(arr, left, mid - 1, target);
+            } else {
+                return bSearch(arr, mid + 1, right, target);
+            }
+        }
+        return -1;
+    }
+
 }

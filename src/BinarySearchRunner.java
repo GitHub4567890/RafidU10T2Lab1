@@ -35,5 +35,24 @@ public class BinarySearchRunner {
         System.out.println(idx);
         System.out.println(idx2);
         System.out.println("---------");
+
+        idx = BinarySearch.iterativeNonRecursiveBinarySearch(arr, -10);
+        idx2 = BinarySearch.recursiveBinarySearch(arr, 0, 14, -10);
+        System.out.println(idx);
+        System.out.println(idx2);
+        System.out.println("---------");
+
+        idx = BinarySearch.iterativeNonRecursiveBinarySearch(arr, 12);
+        idx2 = BinarySearch.recursiveBinarySearch(arr, 0, 14, 12);
+        System.out.println(idx);
+        System.out.println(idx2);
+        System.out.println("---------");
+
+        idx = BinarySearch.iterativeNonRecursiveBinarySearch(arr, 55);
+        idx2 = BinarySearch.recursiveBinarySearch(arr, 0, 14, 55);
+        System.out.println(idx);
+        System.out.println(idx2);
+        System.out.println("---------");
+
     }
 }
